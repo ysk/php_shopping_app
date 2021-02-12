@@ -35,7 +35,7 @@ foreach($cart as $key=>$val){
     if($rec['gazou'] == false){
         $pro_gazou[] = '';
     } else {
-        $pro_gazou[] = '<img src="../product/gazou/' . $rec['gazou'] . '" style="width:250px"><br>';
+        $pro_gazou[] = '<img src="../../gazou/' . $rec['gazou'] . '" style="width:250px"><br>';
     }
 }
 

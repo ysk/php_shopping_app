@@ -18,7 +18,7 @@ require_once($_DIR . '../lib/product/pro_edit.php');
 
     <p>商品画像</p>
     <?php if(check_product_gazou_old_name($pro_gazou_name_old) == true): ?>
-        <p><img src="./gazou/<?php echo $pro_gazou_name_old; ?>" style="width: 250px;"></p>
+        <p><img src="../../gazou/<?php echo $pro_gazou_name_old; ?>" style="width: 250px;"></p>
     <?php endif; ?>
 
 

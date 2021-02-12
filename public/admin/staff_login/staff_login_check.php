@@ -11,6 +11,6 @@ if(check_login($rec) != false){
     exit();
 } else {
     echo '<p>スタッフコードかパスワードが間違っています</p>';
-    echo '<a href="index.html">戻る</a>';
+    echo '<a href="../index.html">戻る</a>';
 }
 ?>

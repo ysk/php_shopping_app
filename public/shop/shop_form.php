@@ -38,6 +38,8 @@ require_once($_DIR . '../lib/common/functions.php');
                 <td><input type="text" name="tel" style="width: 150px;" value="<?php //echo $_SESSION['tel']; ?>"></td>
             </tr>
         </table>
+
+        
         <br>
         <input type="button" onclick="history.back();" value="戻る">
         <input type="submit" value="OK">

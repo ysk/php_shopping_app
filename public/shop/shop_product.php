@@ -21,7 +21,7 @@ require_once($_DIR . '../lib/shop/shop_product.php');
 <p>価格：<?php echo $pro_price; ?></p>
 
 <?php if(check_product_gazou_name($pro_gazou_name) == true): ?>
-<p>商品画像：<img src="../product/gazou/<?php echo $pro_gazou_name; ?>" style="width: 250px;"></p> 
+<p>商品画像：<img src="../../gazou/<?php echo $pro_gazou_name; ?>" style="width: 250px;"></p> 
 <?php endif; ?>
 
 

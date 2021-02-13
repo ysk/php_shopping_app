@@ -1,11 +1,9 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/setting.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session_member.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_list.php');
-
-
 ?>
+
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="ja">
@@ -29,7 +27,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_list.php');
         <tr>
             <td>
                 <a href="shop_product.php?procode=<?php echo $value['code']; ?>">
-                <img src="../../gazou/<?php echo $value['gazou']; ?>" style="width:250px"></a>
+                <img src="../../upload/<?php echo $value['gazou']; ?>" style="width:250px"></a>
             </td>
             <td>
                 <a href="shop_product.php?procode=<?php echo $value['code']; ?>"><?php echo $value['name']; ?></a>

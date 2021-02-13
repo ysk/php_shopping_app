@@ -1,11 +1,9 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/setting.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session_member.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_list.php');
-
-
 ?>
+
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="ja">

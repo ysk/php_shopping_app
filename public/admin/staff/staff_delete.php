@@ -1,29 +1,7 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/setting.php');
-require_once($_DIR . '../lib/common/session.php');
-require_once($_DIR . '../lib/common/functions.php');
-require_once($_DIR . '../lib/staff/staff_delete.php');
+require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOne.php');
+require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOneCommon.php');
+
+$array = array("variable1"=>"value1"); //変数定義
+echo $blade->run("admin.staff.delete", $array);
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>スタッフ削除フォーム</title>
-</head>
-<body>
-    <h1>スタッフ削除</h1>
-
-    スタッフ名<br>
-    <?php echo $staff_name; ?><br>
-    <br>
-    このスタッフを削除してよろしいですか？<br>
-    <br>
-    <form method='POST' action="staff_delete_done.php">
-        <input type="hidden" name="code" value="<?php echo $staff_code ?>">
-
-        <input type="button" onclick="history.back();" value="戻る">
-        <input type="submit" name="submit" value="OK">
-    </form>
-</body>
-</html>

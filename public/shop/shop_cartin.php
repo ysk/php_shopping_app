@@ -1,19 +1,7 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/setting.php');
-require_once($_DIR . '../lib/common/session_member.php');
-require_once($_DIR . '../lib/common/functions.php');
-require_once($_DIR . '../lib/shop/shop_cartin.php');
+require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOne.php');
+require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOneCommon.php');
+
+$array = array("variable1"=>"value1"); //変数定義
+echo $blade->run("shop.cartin", $array);
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>カート</title>
-</head>
-<body>
-<h1>カート</h1>
-カートに追加しました。<br>
-<br>
-<a href="shop_list.php">商品一覧に戻る</a>
-</html>

@@ -1,8 +1,6 @@
 <?php 
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/setting.php');
-require_once($_DIR . '../lib/common/functions.php');
-require_once($_DIR . '../lib/common/DB.php');
-
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/DB.php');
 
 $staff_code = $_GET['staffcode'];
 
@@ -13,8 +11,6 @@ $stmt->execute($data);
 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $staff_name=$rec['name'];
-
-
 
 $dbh = null;
 ?>

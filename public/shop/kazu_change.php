@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/setting.php');
-require_once($_DIR . '../lib/common/functions.php');
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 
 session_start();
 session_regenerate_id(true);

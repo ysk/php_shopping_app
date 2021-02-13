@@ -1,7 +1,6 @@
 <?php 
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/setting.php');
-require_once($_DIR . '../lib/common/functions.php');
-require_once($_DIR . '../lib/common/DB.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/DB.php');
 ?>
 
 <?php
@@ -43,7 +42,7 @@ $dbh = null;
 
 if($pro_gazou_name_old != $pro_gazou_name){
     if($pro_gazou_name_old != ''){
-        unlink('../../gazou/'.$pro_gazou_name_old);
+        unlink('../../upload/'.$pro_gazou_name_old);
     }
 }
 

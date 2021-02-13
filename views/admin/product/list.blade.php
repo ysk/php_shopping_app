@@ -1,18 +1,13 @@
 <?php
-
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/product/pro_list.php');
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品登録フォーム</title>
-</head>
-<body>
-<h1>商品一覧</h1>
+@extends('layouts.admin_frame')
+
+@section('title', '商品一覧')
+
+@section('content')
 <form method="post" action="pro_branch.php">
     <?php $result = $stmt->fetchAll(); ?>
     <?php foreach($result as $key=>$value): ?>
@@ -27,6 +22,5 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/product/pro_list.php');
 </form>
 <br><br>
 <a href="../staff_login/staff_top.php">TOPメニューへ</a>
-</body>
-</html>
+@endsection
 

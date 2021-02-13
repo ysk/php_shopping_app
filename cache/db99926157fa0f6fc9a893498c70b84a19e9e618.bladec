@@ -3,27 +3,21 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session_member.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_list.php');
 ?>
+<?php $_shouldextend[1]=1; ?>
 
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>商品一覧</title>
-</head>
-<body>
-<h1>商品一覧</h1>
+<?php $this->startSection('title', '商品一覧ページ'); ?>
 
- <?php $result = $stmt->fetchAll(); ?>
- <table border="1">
- <tr>
+<?php $this->startSection('content'); ?>
+
+<?php $result = $stmt->fetchAll(); ?>
+<table border="1">
+<tr>
  <th>商品</th>
  <th>画像</th>
  <th>価格</th>
- </tr>
+</tr>
 
- <?php foreach($result as $key=>$value): ?>
+<?php foreach($result as $key=>$value): ?>
  <tr>
  <td>
  <a href="shop_product.php?procode=<?php echo $value['code']; ?>">
@@ -36,10 +30,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_list.php');
  <?php echo number_format($value['price']); ?>円</a>
  </td>
  </tr>
- <?php endforeach;?>
- </table>
+<?php endforeach;?>
+</table>
 <br>
 <a href="shop_cartlook.php">カートを見る</a><br><br>
-</body>
-</html>
 
+<?php $this->stopSection(); ?>
+
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.site_frame'); } ?>

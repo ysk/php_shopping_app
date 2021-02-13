@@ -3,15 +3,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session_member.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_product.php');
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>商品情報参照</title>
-</head>
-<body>
-<h1>商品情報参照</h1>
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title', '商品詳細ページ'); ?>
+
+<?php $this->startSection('content'); ?>
 
 <a href="shop_cartin.php?procode=<?php echo $pro_code; ?>">カートに入れる</a><br>
 <br>
@@ -23,9 +19,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_product.php');
 <p>商品画像：<img src="../../upload/<?php echo $pro_gazou_name; ?>" style="width: 250px;"></p> 
 <?php endif; ?>
 
-
- <form>
+<form>
  <input type="button" onclick="history.back();" value="戻る">
- </form>
-</body>
-</html>
+</form>
+
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.site_frame'); } ?>

@@ -1,19 +1,12 @@
 <?php
-
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/basic_auth.php');
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ショップ管理TOP</title>
-</head>
-<body>
+@extends('layouts.admin_frame')
 
-<h1>ショップ管理TOP</h1>
+@section('title', 'ショップ管理TOP')
 
+@section('content')
 <a href="staff_logout.php">ログアウト</a><br>
 <br>
 <a href="../product/pro_list.php">商品管理</a><br>
@@ -23,5 +16,4 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/basic_auth.php');
 <a href="../order/order_download.php">注文ダウンロード</a><br>
 
 <br>
-</body>
-</html>
+@endsection

@@ -7,15 +7,12 @@ if(isset($_COOKIE[session_name()]) == true){
 session_destroy();
 ?>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ログアウトしました。</title>
-</head>
-<body>
-    ログアウトしました。<br>
-    <br>
-    <a href="../">ログイン画面へ</a>
+@extends('layouts.admin_frame')
 
-</body>
-</html>
+@section('title', 'ログアウト')
+
+@section('content')
+ログアウトしました。<br>
+<br>
+<a href="../">ログイン画面へ</a>
+@endsection

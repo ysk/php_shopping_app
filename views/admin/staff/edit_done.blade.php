@@ -4,19 +4,13 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/staff/staff_edit_done.php');
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>スタッフ編集フォーム</title>
-</head>
-<body>
 
-<h1>スタッフ編集</h1>
+@extends('layouts.admin_frame')
+
+@section('title', 'スタッフ編集フォーム')
+
+@section('content')
 <p>修正しました</p>
 <br>
-<a href="staff_list.php">戻る</a>
-
-</body>
-</html>
+<a href="staff_list.php">戻る</a><br>
+@endsection

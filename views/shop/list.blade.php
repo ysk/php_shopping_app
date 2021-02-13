@@ -3,43 +3,37 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session_member.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_list.php');
 ?>
+@extends('layouts.site_frame')
 
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品一覧</title>
-</head>
-<body>
-<h1>商品一覧</h1>
+@section('title', '商品一覧ページ')
 
-    <?php $result = $stmt->fetchAll(); ?>
-    <table border="1">
+@section('content')
+
+<?php $result = $stmt->fetchAll(); ?>
+<table border="1">
+<tr>
+    <th>商品</th>
+    <th>画像</th>
+    <th>価格</th>
+</tr>
+
+<?php foreach($result as $key=>$value): ?>
     <tr>
-        <th>商品</th>
-        <th>画像</th>
-        <th>価格</th>
+        <td>
+            <a href="shop_product.php?procode=<?php echo $value['code']; ?>">
+            <img src="../../upload/<?php echo $value['gazou']; ?>" style="width:250px"></a>
+        </td>
+        <td>
+            <a href="shop_product.php?procode=<?php echo $value['code']; ?>"><?php echo $value['name']; ?></a>
+        </td>
+        <td>
+            <?php echo number_format($value['price']); ?>円</a>
+        </td>
     </tr>
-
-    <?php foreach($result as $key=>$value): ?>
-        <tr>
-            <td>
-                <a href="shop_product.php?procode=<?php echo $value['code']; ?>">
-                <img src="../../upload/<?php echo $value['gazou']; ?>" style="width:250px"></a>
-            </td>
-            <td>
-                <a href="shop_product.php?procode=<?php echo $value['code']; ?>"><?php echo $value['name']; ?></a>
-            </td>
-            <td>
-                <?php echo number_format($value['price']); ?>円</a>
-            </td>
-        </tr>
-    <?php endforeach;?>
-    </table>
+<?php endforeach;?>
+</table>
 <br>
 <a href="shop_cartlook.php">カートを見る</a><br><br>
-</body>
-</html>
+
+@endsection
 

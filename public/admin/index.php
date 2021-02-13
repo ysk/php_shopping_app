@@ -1,3 +1,7 @@
+<?php
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/setting.php');
+require_once($_DIR . '../lib/common/basic_auth.php');
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>

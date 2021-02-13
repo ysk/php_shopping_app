@@ -31,8 +31,8 @@ require_once($_DIR . '../lib/product/pro_add_check.php');
     <?php if(check_product_gazou($pro_gazou) != true): ?>
         <p>画像が大きすぎます。</p>
     <?php else: ?>
-        <?php move_uploaded_file($pro_gazou['tmp_name'], './gazou/'.$pro_gazou['name']); ?>
-        <img src="./gazou/<?php echo $pro_gazou['name']; ?>" style="width: 250px;">
+        <?php move_uploaded_file($pro_gazou['tmp_name'], '../../gazou/'.$pro_gazou['name']); ?>
+        <img src="../../gazou/<?php echo $pro_gazou['name']; ?>" style="width: 250px;">
     <?php endif; ?>
 
     <?php if(check_product_all($pro_name, $pro_price, $pro_gazou) != true): ?>

@@ -1,5 +1,4 @@
 <?php
-
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/basic_auth.php');
 ?>
 

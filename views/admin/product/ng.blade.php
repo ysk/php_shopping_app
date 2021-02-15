@@ -1,7 +1,8 @@
-<?php
+@php
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
-?>
+@endphp
+
 @extends('layouts.admin_frame')
 
 @section('title', '商品選択エラー')

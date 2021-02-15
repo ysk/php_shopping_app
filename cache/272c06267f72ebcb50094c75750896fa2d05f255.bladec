@@ -1,6 +1,6 @@
-<?php
+<?php 
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/basic_auth.php');
-?>
+ ?>
 
 <?php $_shouldextend[1]=1; ?>
 
@@ -12,6 +12,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/basic_auth.php');
  <input type="text" name="code"><br>
  パスワード<br>
  <input type="password" name="pass"><br>
+ <br>
  <input type="submit" value="ログイン">
 </form>
 <?php $this->stopSection(); ?>

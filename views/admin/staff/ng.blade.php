@@ -1,7 +1,7 @@
-<?php
+@php
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
-?>
+@endphp
 <!DOCTYPE html>
 <html lang="ja">
 @extends('layouts.admin_frame')

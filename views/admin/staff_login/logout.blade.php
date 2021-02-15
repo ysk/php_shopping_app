@@ -11,8 +11,9 @@ session_destroy();
 
 @section('title', 'ログアウト')
 
-@section('content')
-ログアウトしました。<br>
-<br>
-<a href="../">ログイン画面へ</a>
+    @section('content')
+    ログアウトしました。<br>
+    <br>
+    <a href="../">ログイン画面へ</a>
+
 @endsection

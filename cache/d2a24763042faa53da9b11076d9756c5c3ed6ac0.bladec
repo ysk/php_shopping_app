@@ -1,15 +1,15 @@
-<?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session_member.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
+<?php 
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_cartin.php');
-?>
+ ?>
+
 <?php $_shouldextend[1]=1; ?>
 
 <?php $this->startSection('title', 'カートに追加しました'); ?>
 
-<?php $this->startSection('content'); ?>
-カートに追加しました。<br>
-<br>
-<a href="shop_list.php">商品一覧に戻る</a>
+ <?php $this->startSection('content'); ?>
+ カートに追加しました。<br>
+ <br>
+ <a href="shop_list.php">商品一覧に戻る</a>
+
 <?php $this->stopSection(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.site_frame'); } ?>

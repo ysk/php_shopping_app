@@ -1,18 +1,13 @@
-<?php
-
+<?php 
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session_member.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
-?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>お客様情報の入力</title>
-</head>
-<body>
- <h1>お客様情報を入力して下さい</h1>
- <br>
+ ?>
+
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title', 'お客様情報の入力'); ?>
+
+<?php $this->startSection('content'); ?>
+
  <form method='POST' action="shop_form_check.php">
  <table border="1">
  <tr>
@@ -38,11 +33,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
  <td><input type="text" name="tel" style="width: 150px;" value="<?php //echo $_SESSION['tel']; ?>"></td>
  </tr>
  </table>
-
- 
  <br>
  <input type="button" onclick="history.back();" value="戻る">
  <input type="submit" value="OK">
  </form>
-</body>
-</html>
+
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.site_frame'); } ?>

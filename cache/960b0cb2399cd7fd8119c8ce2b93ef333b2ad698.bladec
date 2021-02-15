@@ -1,27 +1,29 @@
-<?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
+<?php 
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/product/pro_list.php');
-?>
+ ?>
+
 <?php $_shouldextend[1]=1; ?>
 
 <?php $this->startSection('title', '商品一覧'); ?>
 
 <?php $this->startSection('content'); ?>
-<form method="post" action="pro_branch.php">
- <?php $result = $stmt->fetchAll(); ?>
- <?php foreach($result as $key=>$value): ?>
+
+ <form method="post" action="pro_branch.php">
+ <?php  $result = $stmt->fetchAll();  ?>
+ <?php $__currentLoopData = $result; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $key=>$value): $loop = $this->incrementLoopIndices();  ?>
  <label>
- <input type="radio" name="procode" value="<?php echo $value['code']; ?>">
- <?php echo $value['name']; ?> --- <?php echo $value['price']; ?>円<br>
- <?php endforeach;?>
+ <input type="radio" name="procode" value="<?php echo \htmlentities($value['code'], ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php echo \htmlentities($value['name'], ENT_QUOTES, 'UTF-8', false); ?> --- <?php echo \htmlentities($value['price'], ENT_QUOTES, 'UTF-8', false); ?>円<br>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  <input type="submit" name="disp" value="参照">
  <input type="submit" name="add" value="追加">
  <input type="submit" name="edit" value="修正">
  <input type="submit" name="delete" value="削除">
-</form>
-<br><br>
-<a href="../staff_login/staff_top.php">TOPメニューへ</a>
+ </form>
+ <br><br>
+ <a href="../staff_login/staff_top.php">TOPメニューへ</a>
+
 <?php $this->stopSection(); ?>
 
 

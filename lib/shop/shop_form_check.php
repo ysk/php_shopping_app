@@ -8,7 +8,6 @@ $post = sanitize($_POST);
 
 if(isset($_POST['onamae'])){
     $onamae = $post['onamae'];
-    $_SESSION['onamae'] = $onamae;
 }
 if(isset($_POST['email'])){
     $email = $post['email'];
@@ -24,6 +23,21 @@ if(isset($_POST['address'])){
 }
 if(isset($_POST['tel'])){
     $tel = $post['tel'];
+}
+if(isset($_POST['chumon'])){
+    $chumon = $post['chumon'];
+}
+if(isset($_POST['pass'])){
+    $pass = $post['pass'];
+}
+if(isset($_POST['pass2'])){
+    $pass2 = $post['pass2'];
+}
+if(isset($_POST['danjo'])){
+    $danjo = $post['danjo'];
+}
+if(isset($_POST['birth'])){
+    $birth = $post['birth'];
 }
 
 $dbh = null;
@@ -70,4 +84,31 @@ function check_tel($tel){
         return true;
     }   
 }
+
+function check_member_pass($chumon, $pass, $pass2){
+    if($chumon=='chumontouroku'){
+        if($pass != $pass2 || $pass=='' || $pass2 == ''){
+            return false;
+        } else {
+            return true;
+        }
+    }
+}
+
+function check_gender($danjo){
+    if($danjo == 'dan'){
+        return 'mail';
+    } else {
+        return 'femail';
+    }
+}
+
+
+
+
+
+
+
+
+
 ?>

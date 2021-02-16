@@ -1,6 +1,4 @@
 <?php
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/staff_login/staff_login_check.php');
 if(check_login($rec) != false){
     session_start();

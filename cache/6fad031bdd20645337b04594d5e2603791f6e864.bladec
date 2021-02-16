@@ -1,14 +1,14 @@
-<?php
+<?php 
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/staff/staff_add.php');
+ ?>
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
-?>
 <?php $_shouldextend[1]=1; ?>
 
 <?php $this->startSection('title', 'スタッフ登録フォーム'); ?>
 
 <?php $this->startSection('content'); ?>
-<form method='POST' action="staff_add_check.php">
+
+ <form method='POST' action="staff_add_check.php">
  スタッフ名を入力して下さい<br>
  <input type="text" name="name" value=""><br>
  <br>
@@ -20,6 +20,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
  <br>
  <input type="button" onclick="history.back();" value="戻る">
  <input type="submit" name="submit" value="OK">
-</form>
+ </form>
+
 <?php $this->stopSection(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.admin_frame'); } ?>

@@ -64,6 +64,35 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_form_check.php');
             </td>
         </tr>
     </table>
+
+<?php
+var_dump($chumon);
+
+?>
+    @if($chumon=='chumontouroku')
+
+        @if(!check_member_pass($chumon, $pass, $pass2))
+            <p>パスワードが正しくありません</p>
+            @php $ok_flg = false; @endphp
+        @endif
+        
+        <p>性別</p>
+        @if(check_gender($danjo) == 'mail')
+            <p>男性</p>
+        @else
+            <p>女性</p>
+        @endif
+        
+        <p>生まれ年</p>
+        <p>{{ $birth }}年代</p>
+
+    @endif
+
+
+    <br>
+    <br>
+
+
     <form method='POST' action="shop_form_done.php">
     <input type="hidden" name="onamae" value="{{ $onamae }}">
     <input type="hidden" name="email" value="{{ $email }}">
@@ -71,6 +100,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_form_check.php');
     <input type="hidden" name="postal2" value="{{ $postal2 }}">
     <input type="hidden" name="address" value="{{ $address }}">
     <input type="hidden" name="tel" value="{{ $tel }}">
+    <input type="hidden" name="chumon" value="{{ $chumon }}">
+    <input type="hidden" name="pass" value="{{ $pass }}">
+    <input type="hidden" name="danjo" value="{{ $danjo }}">
+    <input type="hidden" name="birth" value="{{ $birth }}">
+
     <br>
     <input type="button" onclick="history.back();" value="戻る">
     @if($ok_flg==true)

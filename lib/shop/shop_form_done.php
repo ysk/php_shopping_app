@@ -13,6 +13,12 @@ $postal2 = $post['postal2'];
 $address = $post['address'];
 $tel     = $post['tel'];
 
+$chumon  = $post['chumon'];
+$pass    = $post['pass'];
+$danjo   = $post['danjo'];
+$birth   = $post['birth'];
+
+
 $cart  = $_SESSION['cart'];
 $kazu  = $_SESSION['kazu'];
 $max   = count($cart);
@@ -42,7 +48,6 @@ for($i=0; $i<$max; $i++){
     $mail_text .= $shokei."円\n";
 
 }
-
 
 $mail_text .= "送料は無料です\n";
 $mail_text .= "------------------------------\n";
@@ -77,14 +82,43 @@ mb_language('Japanese');
 mb_internal_encoding('UTF-8');
 mb_send_mail('yusuke_aono_@yahoo.co.jp', $title, $mail_text, $header);
 
-$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE';
+$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE, dat_member WRITE';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
+
+$lastmembercode=0;
+
+if($chumon=='chumontouroku'){
+    $sql = 'INSERT INTO dat_member (password, name, email, postal1, postal2, address, tel, danjo, born) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    $stmt = $dbh->prepare($sql);
+    $data = array();
+    $data[] = md5($pass);
+    $data[] = $onamae;
+    $data[] = $email;
+    $data[] = $postal1;
+    $data[] = $postal2;
+    $data[] = $address;
+    $data[] = $tel;
+    if($danjo == 'dan'){
+        $data[] = 1;
+    } else {
+        $data[] = 2;
+    }
+    $data[] = $birth;
+    $stmt->execute($data);
+
+    ///
+    $sql = 'SELECT LAST_INSERT_ID()';
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute();
+    $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+    $lastmembercode = $rec['LAST_INSERT_ID()'];
+}
 
 $sql = 'INSERT INTO dat_sales (code_member, name, email, postal1, postal2, address, tel) VALUE (?, ?, ?, ?, ?, ?, ?)';
 $stmt  = $dbh->prepare($sql);
 $data = array();
-$data[] = 0;
+$data[] = $lastmembercode;
 $data[] = $onamae;
 $data[] = $email;
 $data[] = $postal1;
@@ -115,7 +149,6 @@ $sql = 'UNLOCK TABLES';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 
-//SELECT * FROM dat_sales, dat_sales_product WHERE dat_sales.code=dat_sales_product.code_sales
 $dbh = null;
 
 ?>

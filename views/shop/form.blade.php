@@ -1,5 +1,5 @@
 @php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session_member.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_form.php');
 @endphp
 
 @extends('layouts.site_frame')
@@ -34,8 +34,39 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session_member.php');
             </tr>
         </table>
         <br>
+
+        <label><input type="radio" name="chumon" value="chumonkonkai" checked>今回だけの注文</label><br>
+        <label><input type="radio" name="chumon" value="chumontouroku">会員登録しての注文</label><br>
+        <br>
+        ※会員登録するには以下の項目も入力して下さい<br>
+        パスワードを入力して下さい<br>
+        <input type="password" name="pass"><br>
+        パスワードをもう一度入力して下さい<br>
+        <input type="password" name="pass2"><br>
+        <br>
+        性別<br>
+        <label><input type="radio" name="danjo" value="dan" checked>男性</label><br>
+        <label><input type="radio" name="danjo" value="jo">女性</label><br>
+        <br>
+        生まれ年<br>
+        <select name="birth">
+            <option value="1910">1910年代</option>
+            <option value="1920">1920年代</option>
+            <option value="1930">1930年代</option>
+            <option value="1940">1940年代</option>
+            <option value="1950">1950年代</option>
+            <option value="1960">1960年代</option>
+            <option value="1970">1970年代</option>
+            <option value="1980" selected>1980年代</option>
+            <option value="1990">1990年代</option>
+            <option value="2000">2000年代</option>
+            <option value="2010">2010年代</option>
+            <option value="2020">2020年代</option>
+        <select><br>
+        <br>
         <input type="button" onclick="history.back();" value="戻る">
         <input type="submit" value="OK">
     </form>
-
+    <br>
+    <br>
 @endsection

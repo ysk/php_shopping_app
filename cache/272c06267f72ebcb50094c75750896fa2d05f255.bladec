@@ -7,14 +7,16 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/basic_auth.php');
 <?php $this->startSection('title', 'スタッフログイン'); ?>
 
 <?php $this->startSection('content'); ?>
-<form method='POST' action="./staff_login/staff_login_check.php">
+
+ <form method='POST' action="./staff_login/staff_login_check.php">
  スタッフコード<br>
  <input type="text" name="code"><br>
  パスワード<br>
  <input type="password" name="pass"><br>
  <br>
  <input type="submit" value="ログイン">
-</form>
+ </form>
+
 <?php $this->stopSection(); ?>
 
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.admin_frame'); } ?>

@@ -1,8 +1,16 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOne.php');
-require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOneCommon.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOne.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOneCommon.php');
 
-$array = array("variable1"=>"value1"); //変数定義
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/staff/staff_list.php');
+
+$result =$stmt->fetchAll();
+
+$array = array(
+    "result"=>$result,
+);
+
 echo $blade->run("admin.staff.list", $array);
 ?>
 

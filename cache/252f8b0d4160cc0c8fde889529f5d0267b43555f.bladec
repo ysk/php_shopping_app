@@ -1,9 +1,6 @@
 <?php 
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/staff/staff_list.php');
  ?>
-
-<!DOCTYPE html>
 
 <?php $_shouldextend[1]=1; ?>
 
@@ -11,10 +8,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/staff/staff_list.php');
 
 <?php $this->startSection('content'); ?>
 <form method="post" action="staff_branch.php">
-
- <?php 
- $result = $stmt->fetchAll(); 
- ?>
 
 <?php $__currentLoopData = $result; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $key=>$value): $loop = $this->incrementLoopIndices();  ?>

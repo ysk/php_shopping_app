@@ -1,28 +1,25 @@
-<?php 
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session.php');
- ?>
-
 <?php $_shouldextend[1]=1; ?>
 
 <?php $this->startSection('title', 'スタッフ一覧'); ?>
 
-<?php $this->startSection('content'); ?>
-<form method="post" action="staff_branch.php">
+ <?php $this->startSection('content'); ?>
+ <form method="post" action="staff_branch.php">
 
-<?php $__currentLoopData = $result; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ <?php $__currentLoopData = $result; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $key=>$value): $loop = $this->incrementLoopIndices();  ?>
-<label>
+ <label>
  <input type="radio" name="staffcode" value="<?php echo \htmlentities($value['code'], ENT_QUOTES, 'UTF-8', false); ?>">
  <?php echo \htmlentities($value['name'], ENT_QUOTES, 'UTF-8', false); ?><br>
-<?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
 
-<input type="submit" name="disp" value="参照">
-<input type="submit" name="add" value="追加">
-<input type="submit" name="edit" value="修正">
-<input type="submit" name="delete" value="削除">
-</form>
-<br><br>
-<a href="../staff_login/staff_top.php">TOPメニューへ</a>
+ <input type="submit" name="disp" value="参照">
+ <input type="submit" name="add" value="追加">
+ <input type="submit" name="edit" value="修正">
+ <input type="submit" name="delete" value="削除">
+ </form>
+ <br><br>
+ <a href="../staff_login/staff_top.php">TOPメニューへ</a>
+
 <?php $this->stopSection(); ?>
 
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.admin_frame'); } ?>

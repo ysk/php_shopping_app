@@ -1,7 +1,3 @@
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/staff/staff_edit_check.php');
-@endphp
-
 @extends('layouts.admin_frame')
 
     @section('title', 'スタッフ編集フォーム')

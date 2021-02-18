@@ -8,6 +8,6 @@ $sql  = 'SELECT * FROM mst_product WHERE 1';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 
-$dbh = null;
+$dbh  = null;
 
 ?>

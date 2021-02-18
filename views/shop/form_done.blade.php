@@ -1,7 +1,3 @@
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_form_done.php');
-@endphp
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>

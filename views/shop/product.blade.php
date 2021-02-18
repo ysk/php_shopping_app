@@ -1,7 +1,3 @@
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_product.php');
-@endphp
-
 @extends('layouts.site_frame')
 
 @section('title', '商品詳細ページ')

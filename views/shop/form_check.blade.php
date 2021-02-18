@@ -1,7 +1,3 @@
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_form_check.php');
-@endphp
-
 @extends('layouts.site_frame')
 
 @section('title', 'お客様情報の入力 - 確認')
@@ -65,10 +61,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_form_check.php');
         </tr>
     </table>
 
-<?php
-var_dump($chumon);
-
-?>
     @if($chumon=='chumontouroku')
 
         @if(!check_member_pass($chumon, $pass, $pass2))

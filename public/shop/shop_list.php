@@ -1,8 +1,13 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOne.php');
-require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOneCommon.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOne.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOneCommon.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_list.php');
 
-$array = array();
+$result = $stmt->fetchAll();
+
+$array = array(
+    'result' => $result,
+);
 
 echo $blade->run("shop.list", $array);
 ?>

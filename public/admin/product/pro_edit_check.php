@@ -7,9 +7,9 @@ $array = array(
     "pro_code"  => $pro_code,
     "pro_name"  => $pro_name,
     "pro_price" => $pro_price,
-    "pro_gazou"          => $pro_gazou,
+    "pro_gazou" => $pro_gazou,
+    "pro_code"  => $pro_code,
     "pro_gazou_name_old" => $pro_gazou_name_old,
-    "pro_code"           => $valpro_codeue1,
 );
 
 echo $blade->run("admin.product.edit_check", $array);

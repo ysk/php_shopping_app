@@ -7,7 +7,7 @@ $array = array(
     "pro_code"  => $pro_code,
     "pro_name"  => $pro_name,
     "pro_price" => $pro_price,
-    "pro_gazou_name_old" => $value1pro_gazou_name_old,
+    "pro_gazou_name_old" => $pro_gazou_name_old,
 );
 
 echo $blade->run("admin.product.edit", $array);

@@ -7,8 +7,7 @@ $array = array(
     "pro_name"  => $pro_name,
     "pro_price" => $pro_price,
     "pro_gazou" => $pro_gazou,
-
-); //変数定義
+);
 
 echo $blade->run("admin.product.add_check", $array);
 ?>

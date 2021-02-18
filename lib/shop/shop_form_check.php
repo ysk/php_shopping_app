@@ -54,7 +54,6 @@ function check_name($onamae){
 
 function check_mail($email){
     if(preg_match('/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/', $email)==0){
-        $error_flg = false;
         return false;
     } else {
         return true;

@@ -1,16 +1,8 @@
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_list.php');
-@endphp
-
 @extends('layouts.site_frame')
 
 @section('title', '商品一覧ページ')
 
 @section('content')
-
-    @php 
-        $result = $stmt->fetchAll(); 
-    @endphp
 
     <table border="1">
     <tr>

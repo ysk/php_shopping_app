@@ -1,7 +1,3 @@
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/order/order_download.php');
-@endphp
-
 @extends('layouts.admin_frame')
 
 @section('title', 'CSV注文ダウンロード')

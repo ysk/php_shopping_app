@@ -1,7 +1,3 @@
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_form.php');
-@endphp
-
 @extends('layouts.site_frame')
 
 @section('title', 'お客様情報の入力')

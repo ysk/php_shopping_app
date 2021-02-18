@@ -4,14 +4,13 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/DB.php');
 ?>
 <?php
+$post = sanitize($_POST);
 
 if(isset($_POST['name'])){
-    $staff_name = $_POST['name'];
-    $staff_name = h($staff_name);
+    $staff_name = $post['name'];
 }
 if(isset($_POST['pass'])){
-    $staff_pass = $_POST['pass'];
-    $staff_pass = h($staff_pass);
+    $staff_pass = $post['pass'];
 }
 
 $sql = 'INSERT INTO mst_staff (name, password) VALUE (?,?)';

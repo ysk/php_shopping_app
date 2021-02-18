@@ -1,7 +1,3 @@
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/staff/staff_disp.php');
-@endphp
-
 @extends('layouts.admin_frame')
 
 @section('title', 'スタッフ情報参照')

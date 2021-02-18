@@ -1,7 +1,3 @@
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/staff/staff_add_check.php');
-@endphp
-
 @extends('layouts.admin_frame')
 
 @section('title', 'スタッフ登録フォーム')
@@ -24,10 +20,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/staff/staff_add_check.php');
         <input type="button" onclick="history:back()" value="戻る">
         </form>
     @else
-        <?php $staff_pass=md5($staff_pass); ?>
         <form method="post" action="staff_add_done.php">
         スタッフ名：<input type="text" name="name" readonly value="{{ $staff_name }}"><br>
-        <input type="hidden" name="pass" value="{{ $staff_pass }}"><br>
+        <input type="hidden" name="pass" value="{{ $staff_pass_md5 }}"><br>
         <br>
         <input type="button" onclick="history.back();" value="戻る">
         <input type="submit" value="OK!">

@@ -20,14 +20,9 @@
         <input type="button" onclick="history.back();" value="戻る">
         </form>
     @else
-
-        @php
-        $staff_pass=md5($staff_pass);
-        @endphp
-
         <form method="post" action="staff_edit_done.php">
         <input type="hidden" name="name" readonly value="{{ $staff_name }}"><br>
-        <input type="hidden" name="pass" value="{{ $staff_pass }}"><br>
+        <input type="hidden" name="pass" value="{{ $staff_pass_md5 }}"><br>
         <input type="hidden" name='code' value="{{ $staff_code }}">
         <br>
         <input type="button" onclick="history.back();" value="戻る">

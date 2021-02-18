@@ -1,7 +1,3 @@
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/staff_login/staff_top.php');
-@endphp
-
 @extends('layouts.admin_frame')
 
 @section('title', 'ショップ管理TOP')

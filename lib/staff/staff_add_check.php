@@ -4,20 +4,18 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/DB.php');
 ?>
 <?php
+$post = sanitize($_POST);
 
 if(isset($_POST['name'])){
-    $staff_name = $_POST['name'];
-    $staff_name = h($staff_name);
+    $staff_name = $post['name'];
 }
 
 if(isset($_POST['pass'])){
-    $staff_pass = $_POST['pass'];
-    $staff_pass = h($staff_pass);
+    $staff_pass = $post['pass'];
 }
 
 if(isset($_POST['pass2'])){
-    $staff_pass2 = $_POST['pass2'];
-    $staff_pass2 = h($staff_pass2);
+    $staff_pass2 = $post['pass2'];
 }
 
 function check_staff_name($staff_name){

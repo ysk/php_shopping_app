@@ -1,7 +1,3 @@
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_cartin.php');
-@endphp
-
 @extends('layouts.site_frame')
 
 @section('title', 'カートに追加しました')

@@ -31,8 +31,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_cartlook.php');
                     <td><input type="text" name="kazu{{ $i }}" value="{{ $kazu[$i] }}" style="width:50px;">個</td>
                     <td>{{ number_format($pro_price[$i]*$kazu[$i]) }}円</td>
                     <td><label><input type="checkbox" name="sakujo{{$i}}">削除する</label></td>
-                @php $total += $pro_price[$i]*$kazu[$i] @endphp
-                </tr>
+               </tr>
+               @php $total += $pro_price[$i]*$kazu[$i] @endphp
             @endfor
                 <tr>
                     <td colspan="6" align="right">

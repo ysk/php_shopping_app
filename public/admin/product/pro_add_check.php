@@ -1,7 +1,14 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOne.php');
-require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOneCommon.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOne.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOneCommon.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/product/pro_add_check.php');
 
-$array = array("variable1"=>"value1"); //変数定義
+$array = array(
+    "pro_name"  => $pro_name,
+    "pro_price" => $pro_price,
+    "pro_gazou" => $pro_gazou,
+
+); //変数定義
+
 echo $blade->run("admin.product.add_check", $array);
 ?>

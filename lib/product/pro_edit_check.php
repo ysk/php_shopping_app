@@ -4,24 +4,20 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/DB.php');
 ?>
 <?php
+
+$post = sanitize($_POST);
+
 if(isset($_POST['code'])){
-    $pro_code = $_POST['code'];
-    $pro_code = h($pro_code);
+    $pro_code = $post['code'];
 }
-
 if(isset($_POST['name'])){
-    $pro_name = $_POST['name'];
-    $pro_name = h($pro_name);
+    $pro_name = $post['name'];
 }
-
 if(isset($_POST['price'])){
-    $pro_price = $_POST['price'];
-    $pro_price = h($pro_price);
+    $pro_price = $post['price'];
 }
-
 if(isset($_POST['gazou_name_old'])){
-    $pro_gazou_name_old = $_POST['gazou_name_old'];
-    $pro_gazou_name_old = h($pro_gazou_name_old);
+    $pro_gazou_name_old = $post['gazou_name_old'];
 }
 
 $pro_gazou = $_FILES['gazou'];

@@ -4,18 +4,19 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/DB.php');
 ?>
 <?php
+
+$post = sanitize($_POST);
+
 if(isset($_POST['code'])){
-    $pro_code = $_POST['code'];
-    $pro_code = h($pro_code);
+    $pro_code = $post['code'];
 }
 
 if(isset($_POST['gazou_name'])){
-    $pro_gazou_name = $_POST['gazou_name'];
-    $pro_gazou_name = h($pro_gazou_name);
+    $pro_gazou_name = $post['gazou_name'];
 }
 
-$sql = 'DELETE FROM mst_product WHERE code=?';
-$stmt  = $dbh->prepare($sql);
+$sql  = 'DELETE FROM mst_product WHERE code=?';
+$stmt = $dbh->prepare($sql);
 $data[] = $pro_code;
 $stmt->execute($data);
 

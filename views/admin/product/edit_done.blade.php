@@ -1,8 +1,3 @@
-
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/product/pro_edit_done.php');
-@endphp
-
 @extends('layouts.admin_frame')
 
 @section('title', '商品編集フォーム')

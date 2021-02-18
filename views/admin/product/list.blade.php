@@ -1,7 +1,3 @@
-@php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/product/pro_list.php');
-@endphp
-
 @extends('layouts.admin_frame')
 
 @section('title', '商品一覧')
@@ -9,7 +5,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/product/pro_list.php');
 @section('content')
 
     <form method="post" action="pro_branch.php">
-        @php $result = $stmt->fetchAll(); @endphp
         @foreach($result as $key=>$value)
         <label>
             <input type="radio" name="procode" value="{{ $value['code'] }}">

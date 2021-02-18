@@ -1,7 +1,9 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOne.php');
-require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOneCommon.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOne.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOneCommon.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/product/pro_edit_done.php');
 
-$array = array("variable1"=>"value1"); //変数定義
+$array = array();
+
 echo $blade->run("admin.product.edit_done", $array);
 ?>

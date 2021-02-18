@@ -1,6 +1,3 @@
-<?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/product/pro_add_done.php');
-?>
 @extends('layouts.admin_frame')
 
 @section('title', '商品登録')

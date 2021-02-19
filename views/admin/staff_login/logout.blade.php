@@ -9,16 +9,12 @@ session_destroy();
 <html>
 @extends('layouts.admin_frame')
 
-
-@include('admin.includes.header')
-
 @section('title', 'ログアウト')
 
     @section('content')
     ログアウトしました。<br>
     <br>
-    <a href="../">ログイン画面へ</a>
+    <a href="../" class="btn btn-primary">ログイン画面へ</a>
 
 @endsection
 
-@include('admin.includes.footer')

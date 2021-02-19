@@ -23,6 +23,7 @@ $stmt->execute($data);
 $dbh = null;
 
 //古い画像があった場合削除する
+
 if($pro_gazou_name != ''){
     unlink('../../upload/'.$pro_gazou_name);
 }

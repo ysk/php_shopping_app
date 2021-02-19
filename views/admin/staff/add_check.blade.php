@@ -2,8 +2,6 @@
 
 @section('title', 'スタッフ登録フォーム')
 
-@include('admin.includes.header')
-
 @section('content')
 
     @if(check_staff_name($staff_name) == true)
@@ -31,5 +29,3 @@
     @endif
 
 @endsection
-
-@include('admin.includes.footer')

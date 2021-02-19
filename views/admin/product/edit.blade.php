@@ -2,8 +2,6 @@
 
 @section('title', '商品編集フォーム')
 
-@include('admin.includes.header')
-
 @section('content')
     <p>商品コード</p>
     {{ $pro_code }}<br>
@@ -30,5 +28,3 @@
     </form>
 
 @endsection
-
-@include('admin.includes.footer')

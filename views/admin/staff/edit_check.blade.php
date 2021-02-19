@@ -2,8 +2,6 @@
 
 @section('title', 'スタッフ編集フォーム')
 
-@include('admin.includes.header')
-
 @section('content')
     @if(check_staff_name($staff_name) == true)
         <p>スタッフ名</p>
@@ -32,5 +30,3 @@
         </form>
     @endif
 @endsection
-
-@include('admin.includes.footer')

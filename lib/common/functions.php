@@ -15,7 +15,7 @@ function sanitize($posts){
 
 function select_month(){
 echo <<<EOD
-<select name="month">
+<select name="month" class="form-select">
     <option value="01">01</option>
     <option value="02">02</option>
     <option value="03">03</option>
@@ -34,7 +34,7 @@ EOD;
 
 function select_year(){
 echo <<<EOD
-<select name="year">
+<select name="year" class="form-select">
     <option value="2020">2020</option>
     <option value="2021">2021</option>
     <option value="2022">2022</option>
@@ -47,7 +47,7 @@ EOD;
 
 function select_day(){
 echo <<<EOD
-<select name="day">
+<select name="day" class="form-select">
     <option value="01">01</option>
     <option value="02">02</option>
     <option value="03">03</option>

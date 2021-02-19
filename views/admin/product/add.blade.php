@@ -2,8 +2,6 @@
 
 @section('title', '商品登録')
 
-@include('admin.includes.header')
-
 @section('content')
 <form method='POST' action="pro_add_check.php" enctype="multipart/form-data">
     商品名を入力して下さい<br>
@@ -19,6 +17,3 @@
     <input type="submit" name="submit" value="OK" class="btn btn-primary">
 </form>
 @endsection
-
-@include('admin.includes.footer')
-

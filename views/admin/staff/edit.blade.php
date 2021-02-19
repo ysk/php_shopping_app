@@ -2,8 +2,6 @@
 
 @section('title', 'スタッフ編集フォーム')
 
-@include('admin.includes.header')
-
 @section('content')
     {{ $staff_code }}<br>
     <form method='POST' action="staff_edit_check.php">
@@ -22,5 +20,3 @@
     </form>
 
 @endsection
-
-@include('admin.includes.footer')

@@ -2,8 +2,6 @@
 
 @section('title', '商品削除')
 
-@include('admin.includes.header')
-
 @section('content')
     商品名<br>
     {{ $pro_name }}<br>
@@ -21,4 +19,3 @@
     </form>
 @endsection
 
-@include('admin.includes.footer')

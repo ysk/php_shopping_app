@@ -2,8 +2,6 @@
 
 @section('title', 'スタッフ情報参照')
 
-@include('admin.includes.header')
-
 @section('content')
     <p>スタッフコード</p>
     {{ $staff_code }}<br>
@@ -16,5 +14,3 @@
     </form>
 
 @endsection
-
-@include('admin.includes.footer')

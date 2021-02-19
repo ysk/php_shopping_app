@@ -2,8 +2,6 @@
 
 @section('title', 'スタッフ登録フォーム')
 
-@include('admin.includes.header')
-
 @section('content')
 
     <form method='POST' action="staff_add_check.php">
@@ -21,5 +19,3 @@
     </form>
 
 @endsection
-
-@include('admin.includes.footer')

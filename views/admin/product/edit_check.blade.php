@@ -2,8 +2,6 @@
 
 @section('title', '商品編集フォーム')
 
-@include('admin.includes.header')
-
 @section('content')
 
     @if(check_product_name($pro_name) == true)
@@ -48,5 +46,3 @@
     @endif
 
 @endsection
-
-@include('admin.includes.footer')

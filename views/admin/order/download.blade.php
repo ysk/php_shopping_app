@@ -2,8 +2,6 @@
 
 @section('title', 'CSV注文ダウンロード')
 
-@include('admin.includes.header')
-
 @section('content')
     <p>ダウンロードしたい注文日を選択して下さい。</p>
     <form method="post" action="order_download_done.php">
@@ -14,8 +12,7 @@
     {{ select_day() }}
     日<br>
     <br>
-    <input type="submit" value="CSVをダウンロードする">
+    
+    <input type="submit" value="CSVをダウンロードする" class="btn btn-primary">
     </form>
 @endsection
-
-@include('admin.includes.footer')

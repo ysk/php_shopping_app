@@ -17,13 +17,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/staff_login/staff_login_check.p
 
     @extends('layouts.admin_frame')
 
-    @include('admin.includes.header')
+    @section('title', 'ログインエラ一')
 
     @section('content')
         <p>スタッフコードかパスワードが間違っています</p>
-        <a href="../index.php">戻る</a>
+        <a href="../index.php" class="btn btn-primary">戻る</a>
     @endsection
-
-    @include('admin.includes.footer')
 
 @endif

@@ -2,8 +2,6 @@
 
 @section('title', 'スタッフ削除フォーム')
 
-@include('admin.includes.header')
-
 @section('content')
     スタッフ名<br>
     {{ $staff_name }}<br>
@@ -16,5 +14,3 @@
         <input type="submit" name="submit" value="OK" class="btn btn-primary">
     </form>
 @endsection
-
-@include('admin.includes.footer')

@@ -14,15 +14,33 @@
             font-family: 'Noto Sans JP', sans-serif;
             font-feature-settings: "palt";
         }
+        .footer {
+
+background-color: #f5f5f5;
+text-align: center;
+padding: 20px;
+}
+body > .container{
+    padding-bottom: 50px;
+}
     </style>
 </head>
-<body>      
+<body>
+    
+    @isset($_SESSION['login'])
+        @include('admin.includes.header')
+    @endisset
+
     <div class="container">
         <h1 class="pb-2 mt-4 mb-4 border-bottom">@yield('title')</h1>
-        <main class="content">
+        <main class="content pb-2">
         @yield('content')
         </main>
     </div>
+
+    @isset($_SESSION['login'])
+        @include('admin.includes.footer')
+    @endisset
 
 </body>
 </html>

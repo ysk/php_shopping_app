@@ -1,8 +1,10 @@
 @extends('layouts.admin_frame')
 
-    @section('title', 'スタッフ編集フォーム')
+@section('title', 'スタッフ編集フォーム')
 
-    @section('content')
+@include('admin.includes.header')
+
+@section('content')
     {{ $staff_code }}<br>
     <form method='POST' action="staff_edit_check.php">
         <input type="hidden" name="code" value="{{ $staff_code }}">
@@ -15,8 +17,10 @@
         パスワードをもう一度入力して下さい<br>
         <input type="password" name="pass2" value=""><br>
         <br>
-        <input type="button" onclick="history.back();" value="戻る">
-        <input type="submit" name="submit" value="OK">
+        <input type="button" onclick="history.back();" value="戻る" class="btn btn-primary">
+        <input type="submit" name="submit" value="OK" class="btn btn-primary">
     </form>
 
 @endsection
+
+@include('admin.includes.footer')

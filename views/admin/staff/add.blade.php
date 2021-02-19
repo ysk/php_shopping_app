@@ -2,6 +2,8 @@
 
 @section('title', 'スタッフ登録フォーム')
 
+@include('admin.includes.header')
+
 @section('content')
 
     <form method='POST' action="staff_add_check.php">
@@ -14,8 +16,10 @@
         パスワードをもう一度入力して下さい<br>
         <input type="password" name="pass2" value=""><br>
         <br>
-        <input type="button" onclick="history.back();" value="戻る">
-        <input type="submit" name="submit" value="OK">
+        <input type="button" onclick="history.back();" value="戻る" class="btn btn-primary">
+        <input type="submit" name="submit" value="OK" class="btn btn-primary">
     </form>
 
 @endsection
+
+@include('admin.includes.footer')

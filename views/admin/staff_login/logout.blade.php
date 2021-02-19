@@ -1,13 +1,16 @@
-<?php
+@php
 session_start();
 $_SESSION = array();
 if(isset($_COOKIE[session_name()]) == true){
     setcookie(session_name(),'',time()-42000,'/');
 }
 session_destroy();
-?>
+@endphp
 <html>
 @extends('layouts.admin_frame')
+
+
+@include('admin.includes.header')
 
 @section('title', 'ログアウト')
 
@@ -17,3 +20,5 @@ session_destroy();
     <a href="../">ログイン画面へ</a>
 
 @endsection
+
+@include('admin.includes.footer')

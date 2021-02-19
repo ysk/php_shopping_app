@@ -1,5 +1,5 @@
 <?php 
-//require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/session.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/DB.php');
 ?>
@@ -21,4 +21,4 @@ $stmt->execute($data);
 
 $dbh = null;
 
-echo $staff_name . 'さんを追加しました。';
+

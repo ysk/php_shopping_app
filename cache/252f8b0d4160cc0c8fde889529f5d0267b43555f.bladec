@@ -2,10 +2,10 @@
 
 <?php $this->startSection('title', 'スタッフ一覧'); ?>
 
+<?php echo $this->runChild('admin.includes.header'); ?>
+
 <?php $this->startSection('content'); ?>
-
  <form method="post" action="staff_branch.php">
-
  <?php $__currentLoopData = $result; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $key=>$value): $loop = $this->incrementLoopIndices();  ?>
  <div class="mb-1">
@@ -25,7 +25,8 @@
  </form>
  <br><br>
  <a href="../staff_login/staff_top.php">TOPメニューへ</a>
-
 <?php $this->stopSection(); ?>
+
+<?php echo $this->runChild('admin.includes.footer'); ?>
 
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.admin_frame'); } ?>

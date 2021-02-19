@@ -2,6 +2,8 @@
 
 @section('title', '商品一覧')
 
+@include('admin.includes.header')
+
 @section('content')
 
     <form method="post" action="pro_branch.php">
@@ -22,4 +24,7 @@
     <a href="../staff_login/staff_top.php">TOPメニューへ</a>
 
 @endsection
+
+@include('admin.includes.footer')
+
 

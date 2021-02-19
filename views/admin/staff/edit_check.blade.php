@@ -1,8 +1,10 @@
 @extends('layouts.admin_frame')
 
-    @section('title', 'スタッフ編集フォーム')
+@section('title', 'スタッフ編集フォーム')
 
-    @section('content')
+@include('admin.includes.header')
+
+@section('content')
     @if(check_staff_name($staff_name) == true)
         <p>スタッフ名</p>
         <p>{{ $staff_name }}</p>
@@ -25,9 +27,10 @@
         <input type="hidden" name="pass" value="{{ $staff_pass_md5 }}"><br>
         <input type="hidden" name='code' value="{{ $staff_code }}">
         <br>
-        <input type="button" onclick="history.back();" value="戻る">
-        <input type="submit" value="OK!">
+        <input type="button" onclick="history.back();" value="戻る" class="btn btn-primary">
+        <input type="submit" value="OK!" class="btn btn-primary">
         </form>
     @endif
-
 @endsection
+
+@include('admin.includes.footer')

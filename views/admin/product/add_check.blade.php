@@ -2,6 +2,8 @@
 
 @section('title', '商品登録フォーム')
 
+@include('admin.includes.header')
+
 @section('content')
 
     @if(check_product_name($pro_name) == true)
@@ -29,7 +31,7 @@
     @if(check_product_all($pro_name, $pro_price, $pro_gazou) != true)
         <form>
         <p>商品名をちゃんと入力して下さい。</p>
-        <input type="button" onclick="history.back();" value="戻る">
+        <input type="button" onclick="history.back();" value="戻る" class="btn btn-primary">
         </form>
     @else
         <p>上記の商品を追加します。</p>
@@ -38,9 +40,11 @@
         <input type="hidden" name="price" value="{{ $pro_price }}">
         <input type="hidden" name="gazou_name" value="{{ $pro_gazou['name'] }}">
         <br>
-        <input type="button" onclick="history.back();" value="戻る">
-        <input type="submit" value="OK!">
+        <input type="button" onclick="history.back();" value="戻る" class="btn btn-primary">
+        <input type="submit" value="OK!" class="btn btn-primary">
         </form>
     @endif
 
 @endsection
+
+@include('admin.includes.footer')

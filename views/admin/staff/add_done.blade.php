@@ -2,8 +2,12 @@
 
 @section('title', 'スタッフ登録フォーム')
 
+@include('admin.includes.header')
+
 @section('content')
-登録しました。<br>
+{{$staff_name}}さんを登録しました。<br>
 <a href="staff_list.php">戻る</a>
 
 @endsection
+
+@include('admin.includes.footer')

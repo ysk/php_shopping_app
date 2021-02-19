@@ -9,6 +9,7 @@ $array = array(
     'pro_name'  => $pro_name,
     'pro_gazou' => $pro_gazou,
     'pro_price' => $pro_price,
+    'is_login' => $_SESSION['member_login'],
 );
 
 echo $blade->run("shop.cartlook", $array);

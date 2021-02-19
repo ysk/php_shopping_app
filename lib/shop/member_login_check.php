@@ -3,22 +3,21 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/DB.php');
 ?>
 <?php
-if(isset($_POST['code'])){
-    $staff_code = $_POST['code'];
-    $staff_code = h($staff_code);
+$post = sanitize($_POST);
 
+if(isset($_POST['email'])){
+    $member_email = $post['email'];
 }
 if(isset($_POST['pass'])){
-    $staff_pass = $_POST['pass'];
-    $staff_pass = h($staff_pass);
+    $member_pass = $post['pass'];
 }
 
-$staff_pass = md5($staff_pass);
+$member_pass = md5($member_pass);
 
-$sql = 'SELECT name FROM mst_staff WHERE code=? AND password=?';
+$sql = 'SELECT code,name FROM dat_member WHERE email=? AND password=?';
 $stmt  = $dbh->prepare($sql);
-$data[] = $staff_code;
-$data[] = $staff_pass;
+$data[] = $member_email;
+$data[] = $member_pass;
 
 $stmt->execute($data);
 

@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <form method='POST' action="./shop/member_login_check.php">
+    <form method='POST' action="member_login_check.php">
         登録メールアドレス<br>
         <input type="text" name="email"><br>
         パスワード<br>

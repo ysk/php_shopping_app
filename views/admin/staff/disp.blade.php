@@ -4,6 +4,9 @@
 
 @section('content')
 
+ 
+
+
     <p>スタッフコード</p>
     {{ $staff_code }}<br>
     <br>

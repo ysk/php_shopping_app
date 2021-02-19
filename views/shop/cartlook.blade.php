@@ -44,8 +44,10 @@
             <input type="button" onclick="history.back();" value="戻る">
         </form>
     <br>
-    <a href="shop_form.php">ご購入手続きへ進む</a>
-
+    <a href="shop_form.php">ご購入手続きへ進む</a><br>
+        @isset($is_login)
+            <a href="shop_kantan_check.php">会員かんたん注文へ進む</a>
+        @endisset
     @else
         <!-- カートが空の場合 -->
         <p>カートに商品が入っていません</p>

@@ -2,8 +2,8 @@
 /cache/*
 
 # Ignore node_modules
-node_modules/
-/node_modeules
+*node_modules/
+*/node_modeules
 
 # Ignore vendor
 /vendor

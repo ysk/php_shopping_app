@@ -1,6 +1,7 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOne.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOneCommon.php');
+require $_SERVER['DOCUMENT_ROOT'] ."../vendor/autoload.php";
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/blade_common.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/shop/shop_cartin.php');
 
 $array = array();

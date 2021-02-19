@@ -1,9 +1,8 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOne.php');
-require($_SERVER['DOCUMENT_ROOT'] . '../lib/blade/BladeOneCommon.php');
+require $_SERVER['DOCUMENT_ROOT'] ."../vendor/autoload.php";
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '../lib/common/blade_common.php');
 
 $array = array();
-
 echo $blade->run("admin.staff_login.logout", $array);
-
 ?>
